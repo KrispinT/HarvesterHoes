@@ -1,0 +1,11 @@
+name: AlohaHoes
+author: Shipsterns
+version: 1.0
+main: me.krispin.hoes.HarvesterHoes
+description: Custom Harvester Hoes plugin by Shipsterns
+
+commands:
+  harvesterhoe:
+    usage: /<command>
+    description: Gives player harvester hoe
+    aliases: [hoe, harvesterhoes, hh]
