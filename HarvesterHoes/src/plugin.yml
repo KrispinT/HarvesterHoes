@@ -8,7 +8,13 @@ commands:
   harvesterhoe:
     usage: /<command>
     description: Gives player harvester hoe
-    aliases: [hoe, harvesterhoes, hh]
+    aliases: [hoe, harvesterhoes]
   upgrades:
     usage: /<command>
     description: Opens upgrades inventory
+  essence:
+    usage: /<command>
+    description: essence balance
+  givehoe:
+    usage: /<command>
+    description: gives a hoe
