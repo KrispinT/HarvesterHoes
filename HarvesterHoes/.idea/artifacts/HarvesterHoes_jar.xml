@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="HarvesterHoes:jar">
-    <output-path>$PROJECT_DIR$/../../../AlohaPvP/dev/plugins</output-path>
+    <output-path>$PROJECT_DIR$/../../../ReefMC/dev/plugins</output-path>
     <root id="archive" name="HarvesterHoes.jar">
       <element id="module-output" name="HarvesterHoes" />
     </root>

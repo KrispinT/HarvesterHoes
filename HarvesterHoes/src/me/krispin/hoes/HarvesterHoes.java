@@ -5,6 +5,7 @@ import me.krispin.hoes.essence.EssenceCommand;
 import me.krispin.hoes.upgrades.UpgradeInventory;
 import me.krispin.hoes.upgrades.UpgradesCommand;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -39,6 +40,18 @@ public class HarvesterHoes extends JavaPlugin {
         getCommand("upgrades").setExecutor(new UpgradesCommand());
         getCommand("essence").setExecutor(new EssenceCommand());
         getCommand("harvesterhoe").setExecutor(new SaveAllCommand());
+
+        Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
+            @Override
+            public void run() {
+                for(Player p : Bukkit.getOnlinePlayers()){
+                    ConfigManager.getInstance().getUserdata().set("Essence." + p.getUniqueId(), HarvesterHoes.getInstance().getEssence().get(p.getUniqueId()));
+                    ConfigManager.getInstance().saveUserdata();
+                }
+                for(int i = 0; i < 4; i++)
+                System.out.println("Save all harvester hoe data!");
+            }
+        },36000L, 36000L);
 
     }
 

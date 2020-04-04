@@ -12,7 +12,7 @@ public class GiveHoeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         final Player p = (Player) sender;
         if(cmd.getName().equalsIgnoreCase("givehoe")) {
-            if (p.hasPermission("perms")){
+            if (p.hasPermission("reefmc.harvesterhoe.give")){
                 if (args.length == 0) {
                     p.sendMessage(Utils.color("&cUsage: /givehoe <playername> <amount>"));
                     return true;

@@ -19,10 +19,10 @@ public class EssenceCommand implements CommandExecutor {
             if(cmd.getName().equalsIgnoreCase("essence")){
                 if(args.length == 0){
                     int amount = HarvesterHoes.getInstance().getEssence().get(p.getUniqueId());
-                    p.sendMessage(Utils.color("&eEssence: ❖" + amount));
+                    p.sendMessage(Utils.color("&eEssence: ❖" + HarvesterHoes.getInstance().getNumberFormatted(amount)));
                     return true;
                 }
-                if(p.hasPermission("alohapvp.essence.give")){
+                if(p.hasPermission("reefmc.harvesterhoe.essence")){
                     if(args.length < 2){
                         p.sendMessage(Utils.color("&cUsage: /essence add/set <playername> <amount>"));
                         return true;
@@ -33,7 +33,7 @@ public class EssenceCommand implements CommandExecutor {
                             Player target = Bukkit.getPlayer(args[1]);
                             if(target != null && target.isOnline()){
                                 int amount = HarvesterHoes.getInstance().getEssence().get(target.getUniqueId());
-                                    p.sendMessage(Utils.color("&6" + target.getName()+"'s &eEssence: ❖" + amount));
+                                    p.sendMessage(Utils.color("&6" + target.getName()+"'s &eEssence: ❖" + HarvesterHoes.getInstance().getNumberFormatted(amount)));
                                     return true;
                             }else{
                                 sender.sendMessage(Utils.color("&cCould not find player!"));
